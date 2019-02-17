@@ -2,7 +2,7 @@ services:
   - docker
 
 script:
-  - docker build -t ruby-build-env
+  - docker build -t ruby-build-env .
 
 after_success:
   - date=$(date "+%Y%m%d")
