@@ -1,0 +1,13 @@
+services:
+  - docker
+
+script:
+  - docker build -t ruby-build-env
+
+after_success:
+  - date=$(date "+%Y%m%d")
+  - docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
+  - docker tag ruby-build-env mametter/ruby-build-env:"${date}"
+  - docker push mametter/ruby-build-env:"${date}"
+  - docker tag ruby-build-env mametter/ruby-build-env:latest
+  - docker push mametter/ruby-build-env:latest
