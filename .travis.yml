@@ -11,7 +11,7 @@ script:
 after_success:
   - date=$(date "+%Y%m%d")
   - docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
-  - docker tag ruby-build-env mametter/ruby-build-env:"${date}"
-  - docker push mametter/ruby-build-env:"${date}"
-  - docker tag ruby-build-env mametter/ruby-build-env:latest
-  - docker push mametter/ruby-build-env:latest
+  - docker tag ruby-build-env rubylang/ruby-build-env:"${date}"
+  - docker push rubylang/ruby-build-env:"${date}"
+  - docker tag ruby-build-env rubylang/ruby-build-env:latest
+  - docker push rubylang/ruby-build-env:latest
