@@ -1,2 +1,2 @@
 FROM ubuntu:latest
-RUN apt-get update && apt-get install -y autoconf bison build-essential git-svn ruby libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses-dev libffi-dev libgdbm-dev libdb-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y ruby git autoconf bison patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev && rm -rf /var/lib/apt/lists/*
